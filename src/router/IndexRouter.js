@@ -1,13 +1,15 @@
-import React from "react"
-import { HashRouter, Route } from "react-router-dom"
-import Login from "../views/login/Login"
-import NewsSandBox from "../views/sandbox/NewsSandBox"
+import React from "react";
+import { HashRouter, Switch, Route, Redirect } from "react-router-dom";
+import Login from "../views/login/Login";
+import NewsSandBox from "../views/sandbox/NewsSandBox";
 
 export default function IndexRouter() {
     return (
         <HashRouter>
-            <Route path="/login" Component={Login} />
-            <Route path="/" Component={NewsSandBox} />
+            <Switch>
+                <Route path="/login" component={Login} />
+                <Route path="/" render={() => localStorage.getItem('token') ? <NewsSandBox /> : <Redirect to="/login" />} />
+            </Switch>
         </HashRouter>
-    )
-}
+    );
+};

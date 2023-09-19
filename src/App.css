@@ -1,0 +1,19 @@
+@import '~antd/dist/reset.css';
+
+:where(.css-dev-only-do-not-override-18iikkb).ant-layout {
+    height: 100%;
+}
+
+::-webkit-scrollbar {
+    width: 5px;
+    height: 5px;
+    position: absolute;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: #b7b9ba;
+}
+
+::-webkit-scrollbar-track {
+    background-color: #ddd;
+}
